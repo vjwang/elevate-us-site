@@ -2,145 +2,169 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- EDIT: page title and description (shown in Google results and browser tabs) -->
-<title>Elevate Us, LLC</title>
-<meta name="description" content="Courses, content, and community, built by someone who’s done it.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>elevate · Technical education</title>
+<meta name="description" content="Technical education that grows with you. Courses, content operations, community, and events for developer-focused companies. Based in San Francisco, remote or on site.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --bg: #f7f8f5;
-    --ink: #1c2420;
-    --muted: #55605a;
-    --accent: #1f5c4a;
-    --accent-ink: #ffffff;
-    --line: #d9ded8;
+:root{
+  --bg:#f6f9f6; --surface:#ffffff; --ink:#14261c; --muted:#4d6055;
+  --line:#d3ded6; --accent:#2e6b4a; --accent-ink:#ffffff; --tint:#e3efe6;
+  --m1:#1f4d36; --m2:#2e6b4a; --m3:#6fae75;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1a14; --surface:#15231b; --ink:#e6f1e9; --muted:#9db3a4;
+    --line:#28392f; --accent:#6fae75; --accent-ink:#0f1a14; --tint:#18301f;
+    --m1:#3e8a5c; --m2:#5ba877; --m3:#8fd0a0;
   }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #121815;
-      --ink: #eef1ed;
-      --muted: #a2ada6;
-      --accent: #6fcfae;
-      --accent-ink: #0d1a14;
-      --line: #2a342e;
-    }
-  }
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--ink);
-    font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
-    line-height: 1.65;
-    font-size: 18px;
-  }
-  .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
-  header { padding: 28px 0; border-bottom: 1px solid var(--line); }
-  header .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
-  .brand { font-weight: 700; font-size: 1.1rem; letter-spacing: 0.01em; }
-  nav a { margin-left: 20px; color: var(--muted); text-decoration: none; font-family: system-ui, sans-serif; font-size: 0.95rem; }
-  nav a:hover { color: var(--ink); }
-  a:focus-visible, .button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
-
-  .hero { padding: 88px 0 72px; }
-  h1 { font-size: clamp(2.2rem, 6vw, 3.4rem); line-height: 1.1; margin: 0 0 24px; letter-spacing: -0.015em; }
-  .lead { font-size: 1.25rem; color: var(--muted); max-width: 34em; margin: 0 0 36px; }
-  .button {
-    display: inline-block; background: var(--accent); color: var(--accent-ink);
-    padding: 14px 26px; border-radius: 4px; text-decoration: none;
-    font-family: system-ui, sans-serif; font-weight: 600; font-size: 1rem;
-  }
-  .button:hover { filter: brightness(1.08); }
-
-  section { padding: 56px 0; border-top: 1px solid var(--line); }
-  h2 { font-size: 1.6rem; margin: 0 0 20px; }
-  h3 { font-size: 1.1rem; margin: 0 0 6px; }
-  p { margin: 0 0 16px; }
-  .services { display: grid; gap: 28px; }
-  .services p { color: var(--muted); margin: 0; }
-  dl { margin: 0; font-family: system-ui, sans-serif; }
-  dt { font-weight: 600; margin-top: 14px; }
-  dd { margin: 2px 0 0; color: var(--muted); }
-  dd a { color: var(--accent); }
-  footer { padding: 32px 0 48px; border-top: 1px solid var(--line); color: var(--muted); font-family: system-ui, sans-serif; font-size: 0.9rem; }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1a14; --surface:#15231b; --ink:#e6f1e9; --muted:#9db3a4;
+  --line:#28392f; --accent:#6fae75; --accent-ink:#0f1a14; --tint:#18301f;
+  --m1:#3e8a5c; --m2:#5ba877; --m3:#8fd0a0;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:Lato,"Helvetica Neue",Arial,sans-serif;
+  font-size:1.0625rem;line-height:1.65;
+}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:2px}
+.wrap{max-width:960px;margin:0 auto;padding:0 1.5rem}
+header{padding:1rem 0;border-bottom:1px solid var(--line)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.brand{display:flex;align-items:center;gap:.6rem;font-weight:900;font-size:1.5rem;letter-spacing:-.02em;text-decoration:none}
+.logo .s1{stroke:var(--m1)} .logo .f1{fill:var(--m1)} .logo .f2{fill:var(--m2)} .logo .f3{fill:var(--m3)}
+nav a{margin-left:1.5rem;text-decoration:none;color:var(--muted);font-size:.975rem}
+nav a:hover{color:var(--ink)}
+.hero{padding:5.5rem 0 4.5rem}
+h1{
+  font-size:clamp(2.5rem,6.5vw,4.5rem);line-height:1.04;letter-spacing:-.035em;
+  margin:0 0 1.5rem;font-weight:900;max-width:15ch;
+}
+.lede{font-size:1.25rem;color:var(--muted);max-width:50ch;margin:0 0 2.25rem}
+.btn{
+  display:inline-block;background:var(--accent);color:var(--accent-ink);
+  padding:.9rem 1.6rem;border-radius:6px;font-weight:700;text-decoration:none;
+}
+.btn:hover{filter:brightness(1.1)}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);margin-left:.75rem}
+h2{font-size:1.9rem;letter-spacing:-.02em;margin:0 0 2rem;line-height:1.15;font-weight:900}
+section{padding:4rem 0}
+.services{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.row{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:1rem 3rem;
+  padding:1.75rem 0;border-top:1px solid var(--line);
+}
+.row:first-of-type{border-top:0;padding-top:0}
+.row h3{margin:0;font-size:1.55rem;letter-spacing:-.02em;line-height:1.2;font-weight:700}
+.row p{margin:0;color:var(--muted);max-width:56ch}
+.about{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:1rem 3rem}
+.about h2{margin:0}
+.about p{margin:0 0 1rem;max-width:60ch}
+.audience{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:.6rem}
+.audience li{background:var(--tint);padding:.35rem .9rem;border-radius:999px;font-size:.95rem}
+.contact{background:var(--tint)}
+.contact .box{max-width:620px}
+.contact p{color:var(--muted);margin:0 0 1.75rem}
+footer{padding:2rem 0;color:var(--muted);font-size:.9rem}
+@media (max-width:700px){
+  .row,.about{grid-template-columns:1fr}
+  nav a{margin-left:1rem}
+  .hero{padding:3.5rem 0 3rem}
+  .btn.ghost{margin:.75rem 0 0}
+}
 </style>
 </head>
 <body>
-
 <header>
   <div class="wrap">
-    <!-- EDIT: company name -->
-    <div class="brand">Your Company Name</div>
-    <nav>
+    <a class="brand" href="#top">
+      <svg class="logo" viewBox="14 10 172 176" width="40" height="40" aria-hidden="true">
+        <path d="M100 180 L100 96" class="s1" stroke-width="8" stroke-linecap="round" fill="none"/>
+        <path d="M0 0 C20 -14 20 -46 0 -66 C-20 -46 -20 -14 0 0 Z" class="f1" transform="translate(100 142) rotate(-58) scale(.95)"/>
+        <path d="M0 0 C20 -14 20 -46 0 -66 C-20 -46 -20 -14 0 0 Z" class="f1" transform="translate(100 142) rotate(58) scale(.95)"/>
+        <path d="M0 0 C20 -14 20 -46 0 -66 C-20 -46 -20 -14 0 0 Z" class="f2" transform="translate(100 114) rotate(-40) scale(.85)"/>
+        <path d="M0 0 C20 -14 20 -46 0 -66 C-20 -46 -20 -14 0 0 Z" class="f2" transform="translate(100 114) rotate(40) scale(.85)"/>
+        <path d="M0 0 C20 -14 20 -46 0 -66 C-20 -46 -20 -14 0 0 Z" class="f3" transform="translate(100 90) scale(1.05)"/>
+      </svg>
+      elevate
+    </a>
+    <nav aria-label="Main">
+      <a href="#work">Services</a>
       <a href="#about">About</a>
-      <a href="#services">Services</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
 </header>
 
-<main>
-  <div class="wrap">
-
-    <div class="hero">
-      <!-- EDIT: headline and intro -->
-      <h1>A clear sentence about what you do for your customers.</h1>
-      <p class="lead">Add one or two sentences with more detail: who you serve, where you are based, and what makes your work reliable.</p>
-      <!-- EDIT: replace with your email address -->
-      <a class="button" href="mailto:hello@yourcompany.com">Email us</a>
-    </div>
-
-    <section id="about">
-      <h2>About us</h2>
-      <!-- EDIT: a short paragraph about the company -->
-      <p>Tell visitors who you are and how long you have been doing this. Keep it to a short paragraph in plain language.</p>
-    </section>
-
-    <section id="services">
-      <h2>Services</h2>
-      <div class="services">
-        <!-- EDIT: replace with your real services; copy a block to add more, delete one to remove -->
-        <div>
-          <h3>First service</h3>
-          <p>One sentence on what this includes and who it helps.</p>
-        </div>
-        <div>
-          <h3>Second service</h3>
-          <p>One sentence on what this includes and who it helps.</p>
-        </div>
-        <div>
-          <h3>Third service</h3>
-          <p>One sentence on what this includes and who it helps.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <!-- EDIT: replace with your real details; delete any line you don't need -->
-      <dl>
-        <dt>Email</dt>
-        <dd><a href="mailto:hello@yourcompany.com">hello@yourcompany.com</a></dd>
-        <dt>Phone</dt>
-        <dd><a href="tel:+18085550123">(808) 555-0123</a></dd>
-        <dt>Address</dt>
-        <dd>123 Example Street, Honolulu, HI 96813</dd>
-        <dt>Hours</dt>
-        <dd>Monday to Friday, 9 am to 5 pm</dd>
-      </dl>
-    </section>
-
+<main id="top">
+  <div class="wrap hero">
+    <h1>Technical education that grows with you.</h1>
+    <p class="lede">I build courses, content operations, communities, and events for companies that teach technical subjects.</p>
+    <a class="btn" href="mailto:hello@example.com?subject=Quote%20request">Request a quote</a>
+    <a class="btn ghost" href="#work">See what I do</a>
   </div>
+
+  <section class="services" id="work">
+    <div class="wrap">
+      <h2>What I do</h2>
+      <div class="row">
+        <h3>Course building</h3>
+        <p>Curriculum, lessons, labs, and assessments for technical topics, from outline to launch. Built around what learners need to do afterward, not what’s easy to cover.</p>
+      </div>
+      <div class="row">
+        <h3>Content operations</h3>
+        <p>Editorial workflows, documentation, and publishing systems so your tutorials, docs, and video channels stay accurate and keep shipping.</p>
+      </div>
+      <div class="row">
+        <h3>Community management</h3>
+        <p>Developer community programs, moderation, and rituals that turn a group of users into people who help each other.</p>
+      </div>
+      <div class="row">
+        <h3>Event production</h3>
+        <p>Developer events, workshops, meetups, and conferences, planned and run end to end, in person or online.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap about">
+      <h2>About</h2>
+      <div>
+        <p>I’m a technical educator based in Honolulu, working remotely or on site with startups and developer-focused companies that need courses, content, community, and events. I’ve built these programs from scratch at a startup, scaled a developer events program into a global one at a large enterprise, and led developer enablement as a director.</p>
+        <p>Who I work with:</p>
+        <ul class="audience">
+          <li>Startups</li>
+          <li>Developer-focused companies</li>
+          <li>Product and enablement teams</li>
+          <li>Course creators and communities</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="box">
+        <h2>Tell me about your project</h2>
+        <p>Share what you’re building, who it’s for, and your timeline. I’ll reply with questions and a quote.</p>
+        <a class="btn" href="mailto:hello@example.com?subject=Quote%20request">Email hello@example.com</a>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer>
-  <div class="wrap">
-    <!-- EDIT: company name; the year is filled in automatically -->
-    &copy; <span id="year"></span> Your Company Name. All rights reserved.
-  </div>
+  <div class="wrap">© 2026 elevate. San Francisco, remote or on site.</div>
 </footer>
-
-<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
